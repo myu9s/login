@@ -43,6 +43,7 @@ def create_account():
 
 def login():
     global database
+    global username
     max_attempts = 3
     attempts = 0
 
@@ -55,6 +56,7 @@ def login():
         if username in database and database[username]['password'] == password:
             print("Login berhasil! Selamat datang, " + username + ". Saldo Anda: " + str(database[username]['saldo']))
             break
+            menu()
         else:
             attempts += 1
             print("Login gagal. Kesempatan tersisa:", max_attempts - attempts)
@@ -72,6 +74,8 @@ def new_account():
 
 import sys
 def exit():
+    print("Terima kasih telah menggunakan Mini ATM")
+    print("Semoga harimu menyenangkan")
     sys.exit()
 
 def main():
